@@ -1,0 +1,41 @@
+{
+  "name": "nativejs-eslint-husky-prettier-boilerplate",
+  "version": "1.0.0",
+  "description": "Native javascript boilerplate",
+  "main": "index.js",
+  "dependencies": {
+    "eslint-config-airbnb": "^18.1.0",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "husky": "^4.2.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primocodetoday/native_js-eslint-husky-prettier-boilerplate.git"
+  },
+  "author": "Primoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/primocodetoday/native_js-eslint-husky-prettier-boilerplate/issues"
+  },
+  "homepage": "https://github.com/primocodetoday/native_js-eslint-husky-prettier-boilerplate#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --config .prettierrc --write",
+      "eslint --fix"
+    ]
+  }
+}
