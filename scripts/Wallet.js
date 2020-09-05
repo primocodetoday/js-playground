@@ -1,4 +1,4 @@
-﻿class Wallet {
+﻿export default class Wallet {
   constructor(money) {
     let _money = money;
 
@@ -13,13 +13,12 @@
       if (typeof value === 'number' && !isNaN(value)) {
         if (type === '+') {
           return (_money += value);
-        } else if (type === '-') {
-          return (_money -= value);
-        } else {
-          throw new Error('Wrong bet');
         }
+        if (type === '-') {
+          return (_money -= value);
+        }
+        throw new Error('Wrong bet');
       } else {
-        console.log(typeof value);
         throw new Error('Wrong number');
       }
     };
