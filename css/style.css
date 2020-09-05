@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,300&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #e53935;
+  background: -webkit-gradient(linear, right top, left top, from(#e53935), to(#e35d5b));
+  background: linear-gradient(to left, #e53935, #e35d5b);
+  height: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c2c2c;
+}
+
+.wrapper .header {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.wrapper .game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrapper .game .area {
+  height: 25vh;
+  width: 25%;
+  background-color: red;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.wrapper .showresult {
+  display: block;
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.wrapper .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .controls button {
+  width: 150px;
+  text-transform: uppercase;
+  padding: 20px 40px;
+  color: white;
+  vertical-align: middle;
+  font-family: 'Rubik One', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #505050;
+  font-weight: 800;
+  border: none;
+  -webkit-box-shadow: 0 0 20px -2px #801514;
+          box-shadow: 0 0 20px -2px #801514;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.wrapper .controls input {
+  text-align: center;
+  background-color: #505050;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 800;
+  -webkit-box-shadow: 0 0 15px -2px #b82321;
+          box-shadow: 0 0 15px -2px #b82321;
+  width: 150px;
+}
+
+.wrapper .results {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+}
+/*# sourceMappingURL=style.css.map */
