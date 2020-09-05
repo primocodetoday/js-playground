@@ -1,7 +1,7 @@
 {
-  "name": "nativejs-eslint-husky-prettier-boilerplate",
+  "name": "js-playground",
   "version": "1.0.0",
-  "description": "Native javascript boilerplate",
+  "description": "Javascript Training Repository",
   "main": "index.js",
   "dependencies": {
     "eslint-config-airbnb": "^18.1.0",
@@ -17,16 +17,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/primocodetoday/native_js-eslint-husky-prettier-boilerplate.git"
-  },
   "author": "Primoza",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/primocodetoday/native_js-eslint-husky-prettier-boilerplate/issues"
-  },
-  "homepage": "https://github.com/primocodetoday/native_js-eslint-husky-prettier-boilerplate#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
