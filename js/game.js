@@ -1,4 +1,12 @@
-﻿class Game {
+﻿/* eslint-disable no-param-reassign */
+// eslint-disable-next-line import/extensions
+import Quote from './Quote.js'
+
+// TODO:
+// * - drawing player HP
+// * - game over
+
+class Game {
   quotes = [
     {
       text: 'pan tadeusz',
@@ -23,23 +31,35 @@
     const { text, category } = this.quotes[
       Math.floor(Math.random() * this.quotes.length)
     ]
+    // drawing board with quote and category
     this.categoryWrapper.innerHTML = category
+    this.quote = new Quote(text)
   }
 
-  guess(letter) {}
+  guess(label, event) {
+    event.target.disabled = true
+    this.quote.guess(label)
+    this.drawQuote()
+  }
 
   drawLetters() {
     for (let index = 0; index < 26; index += 1) {
       const label = (index + 10).toString(36)
       const button = document.createElement('button')
       button.innerHTML = label
-      button.addEventListener('click', () => this.guess(label))
+      button.addEventListener('click', (event) => this.guess(label, event))
       this.lettersWrapper.appendChild(button)
     }
   }
 
+  drawQuote() {
+    const content = this.quote.getContent()
+    this.wordWrapper.innerHTML = content
+  }
+
   start() {
     this.drawLetters()
+    this.drawQuote()
   }
 }
 
