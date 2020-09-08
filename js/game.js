@@ -1,45 +1,41 @@
-﻿/* eslint-disable no-param-reassign */
-// eslint-disable-next-line import/extensions
+﻿/* eslint-disable import/extensions */
+/* eslint-disable no-param-reassign */
 import Quote from './Quote.js'
-
-// TODO:
-// * - drawing player HP
-// * - game over
+import quotes from './quotes.js'
 
 class Game {
-  quotes = [
-    {
-      text: 'pan tadeusz',
-      category: 'Utwór literacki',
-    },
-    {
-      text: 'ogniem i mieczem',
-      category: 'Utwór literacki',
-    },
-    {
-      text: 'dzien niepodległosci',
-      category: 'Film',
-    },
-  ]
+  currentStep = 0
+
+  lastStep = 7
 
   constructor({ outputWrapper, wordWrapper, categoryWrapper, lettersWrapper }) {
     this.outputWrapper = outputWrapper
     this.wordWrapper = wordWrapper
     this.categoryWrapper = categoryWrapper
     this.lettersWrapper = lettersWrapper
+    this.quotes = quotes
 
     const { text, category } = this.quotes[
       Math.floor(Math.random() * this.quotes.length)
     ]
     // drawing board with quote and category
     this.categoryWrapper.innerHTML = category
-    this.quote = new Quote(text)
+    this.quote = new Quote(text.toLowerCase())
   }
 
   guess(label, event) {
     event.target.disabled = true
-    this.quote.guess(label)
-    this.drawQuote()
+    if (this.quote.guess(label)) {
+      this.drawQuote()
+    } else {
+      this.currentStep += 1
+      document.getElementsByClassName('step')[
+        this.currentStep
+      ].style.opacity = 1
+      if (this.currentStep === this.lastStep) {
+        this.handleLose()
+      }
+    }
   }
 
   drawLetters() {
@@ -55,11 +51,27 @@ class Game {
   drawQuote() {
     const content = this.quote.getContent()
     this.wordWrapper.innerHTML = content
+    if (!content.includes('_')) {
+      this.handleWin()
+    }
   }
 
   start() {
     this.drawLetters()
     this.drawQuote()
+    document.getElementsByClassName('step')[this.currentStep].style.opacity = 1
+  }
+
+  handleWin() {
+    this.wordWrapper.innerHTML = 'You Win. Congratulations'
+    this.lettersWrapper.innerHTML = ''
+    this.categoryWrapper.innerHTML = ''
+  }
+
+  handleLose() {
+    this.wordWrapper.innerHTML = "I'm sorry. You Lose. Try again !"
+    this.lettersWrapper.innerHTML = ''
+    this.categoryWrapper.innerHTML = ''
   }
 }
 
@@ -69,4 +81,5 @@ const game = new Game({
   categoryWrapper: document.getElementById('category'),
   lettersWrapper: document.getElementById('letters'),
 })
+
 game.start()
