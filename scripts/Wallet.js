@@ -1,21 +1,21 @@
 ﻿export default class Wallet {
-  constructor(money) {
-    let _money = money;
+  constructor(startCash) {
+    let money = startCash;
 
-    this.getWalletValue = () => _money;
+    this.getWalletValue = () => money;
 
     this.checkCanPlay = (bet) => {
-      if (_money >= bet) return true;
+      if (money >= bet) return true;
       return false;
     };
 
-    this.changeWallet = (value, type = '+') => {
-      if (typeof value === 'number' && !isNaN(value)) {
+    this.changeWallet = (bid, type) => {
+      if (typeof bid === 'number') {
         if (type === '+') {
-          return (_money += value);
+          money += bid;
         }
         if (type === '-') {
-          return (_money -= value);
+          money -= bid;
         }
         throw new Error('Wrong bet');
       } else {
@@ -24,5 +24,3 @@
     };
   }
 }
-
-// const currentwallet = new Wallet(200);

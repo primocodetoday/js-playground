@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-﻿/* eslint-disable import/extensions */
+/* eslint-disable no-alert */
+/* eslint-disable import/extensions */
 import Wallet from './scripts/Wallet.js';
 import Statistics from './scripts/Statistics.js';
 import Draw from './scripts/Draw.js';
@@ -14,7 +14,7 @@ class Game {
     this.boards = document.querySelectorAll('div.area');
     this.bid = document.querySelector('.bid');
 
-    this.spanResullt = document.querySelector('.result');
+    this.spanResult = document.querySelector('.result');
     this.spanBallance = document.querySelector('.ballance');
     this.spanPlays = document.querySelector('.plays');
     this.spanWins = document.querySelector('.wins');
@@ -39,11 +39,12 @@ class Game {
     } else if (!result && result !== '') {
       result = `You lose ${bid} $`;
     }
-    this.spanResullt.textContent = result;
+    this.spanResult.textContent = result;
     this.spanBallance.textContent = money;
-    this.spanPlays.textContent = stats[0];
-    this.spanWins.textContent = stats[1];
-    this.spanLosses.textContent = stats[2];
+    const [spanPlays, spanWins, spanLosses] = stats;
+    this.spanPlays.textContent = spanPlays;
+    this.spanWins.textContent = spanWins;
+    this.spanLosses.textContent = spanLosses;
   }
 
   startGame() {
@@ -51,9 +52,8 @@ class Game {
     const bid = Math.floor(this.bid.value);
 
     if (!this.wallet.checkCanPlay(bid)) {
-      return alert('You dont have money for this');
+      return alert("You don't have money for this");
     }
-
     this.wallet.changeWallet(bid, '-');
 
     this.draw = new Draw();
@@ -67,8 +67,3 @@ class Game {
     this.render(colors, this.wallet.getWalletValue(), win, this.stats.showGameStats(), bid, won);
   }
 }
-
-const game = new Game();
-=======
-﻿console.log('Hello from index.js');
->>>>>>> master
