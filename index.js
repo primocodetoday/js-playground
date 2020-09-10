@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿/* eslint-disable import/extensions */
 import Wallet from './scripts/Wallet.js';
 import Statistics from './scripts/Statistics.js';
@@ -68,3 +69,6 @@ class Game {
 }
 
 const game = new Game();
+=======
+﻿console.log('Hello from index.js');
+>>>>>>> master
