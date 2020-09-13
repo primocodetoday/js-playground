@@ -1,0 +1,172 @@
+@font-face {
+  font-family: DigitalDream;
+  src: url("../assets/DIGITALDREAM.ttf");
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.game {
+  background-color: #c0c0c0;
+  padding: 1.5rem;
+  max-width: 356px;
+  margin: 0 auto;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.8rem;
+}
+
+.header__button {
+  width: 4.8rem;
+  height: 4.8rem;
+  cursor: pointer;
+}
+
+.header__counter {
+  background-color: #000;
+  color: #f80000;
+  padding: 0.5rem;
+  font-family: DigitalDream, sans-serif;
+  font-size: 3.2rem;
+  min-width: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__reset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: none;
+  background-color: #c0c0c0;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__button {
+  cursor: pointer;
+  background-color: transparent;
+  color: #000;
+  border: 0.3rem solid #000;
+  padding: 1rem 2rem;
+  font-size: 2.4rem;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color .2s ease-in, color 0.2s ease-in;
+  transition: background-color .2s ease-in, color 0.2s ease-in;
+}
+
+.modal__button:hover {
+  background-color: #000;
+  color: white;
+}
+
+.modal__content {
+  width: 50vw;
+  height: 50vh;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.modal__text {
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+.panel__button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 2.5rem 0;
+  cursor: pointer;
+  font-size: 2.1rem;
+}
+
+.panel__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.panel__header {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.border {
+  border: .3rem solid;
+}
+/*# sourceMappingURL=styles.css.map */
