@@ -27,6 +27,14 @@ html {
   margin: 0 auto;
 }
 
+.game__board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -168,5 +176,19 @@ html {
 
 .border {
   border: .3rem solid;
+}
+
+.border--convex {
+  border-color: #808080 #fff #fff #808080;
+}
+
+.border--concave {
+  border-color: #fff #808080 #808080 #fff;
+}
+
+.cell {
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */
