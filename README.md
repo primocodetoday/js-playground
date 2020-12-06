@@ -1,10 +1,6 @@
-<h2 align="center">
-  Javascript Playground
-</h2>
+## Javascript Playground
 
-<h3 align="center">
-  The place to train Javascript
-</h3>
+### The place to train Javascript
 
 #### What is this repository for ?
 
@@ -15,9 +11,8 @@
 
 - 1️⃣ master - clean with eslint and codeground
 - 2️⃣ oop-one-armed-bandit - Object Oriented Programing game
-- 3️⃣ JavaScript30 - WesBos training site
-- 4️⃣ oop-hangman - Object Oriented Programing game
-- 5️⃣ jest-training - training site to learn jest
+- 3️⃣ oop-hangman - Object Oriented Programing game
+- 4️⃣ jest-training - training site to learn jest
 
 <br>
 
