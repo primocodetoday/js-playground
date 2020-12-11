@@ -23,6 +23,7 @@
 
 const filters = {
   searchText: '',
+  hideCompleted: false,
 };
 
 const renderSummary = () => {
@@ -35,29 +36,25 @@ const renderSummary = () => {
 
 renderSummary();
 
-const renderTodos = () => {
-  todos.forEach((element) => {
+const renderTodos = (array) => {
+  array.forEach((element) => {
     const todo = document.createElement('p');
-    todo.textContent = `N: ${element.text}`;
-    document.querySelector('#todos').appendChild(todo);
+    todo.textContent = `${element.text}`;
+    todo.classList.add('todo');
+    document.querySelector('.todos').appendChild(todo);
   });
 };
 
-renderTodos();
+renderTodos(todos);
 
 const renderFilteredNotes = (elements, search) => {
-  const filteredTodos = elements.filter((element) =>
-    element.text.toLowerCase().includes(search.searchText.toLowerCase()),
-  );
+  const filteredTodos = elements
+    .filter((el) => el.text.toLowerCase().includes(search.searchText.toLowerCase()))
+    .filter((el) => el.completed === !search.hideCompleted || !el.completed);
   // cleaning todos
-  document.querySelector('#todos').innerHTML = '';
+  document.querySelector('.todos').innerHTML = '';
   // rendering new set of todos
-  filteredTodos.forEach((node) => {
-    const todoEl = document.createElement('p');
-    todoEl.textContent = `N: ${node.text}`;
-    todoEl.classList.add('todo');
-    document.querySelector('#todos').appendChild(todoEl);
-  });
+  renderTodos(filteredTodos);
 };
 
 document.querySelector('#search-todo').addEventListener('input', (e) => {
@@ -72,4 +69,11 @@ form.addEventListener('submit', (e) => {
   todos.push({ text: e.target.elements.addTodo.value, completed: false });
   renderFilteredNotes(todos, filters);
   form.reset();
+});
+
+const hideCheck = document.querySelector('#hide');
+
+hideCheck.addEventListener('change', (e) => {
+  filters.hideCompleted = e.target.checked;
+  renderFilteredNotes(todos, filters);
 });
