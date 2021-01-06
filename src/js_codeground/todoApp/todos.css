@@ -26,6 +26,19 @@ p {
   margin-top: 10px;
 }
 
+.todo {
+  width: 80%;
+  display: flex;
+  margin: 10px 0;
+}
+
+.todo > input {
+  flex: 1 1 50px;
+}
+.todo > span {
+  flex: 2 2 150px;
+}
+
 #add-todo {
   margin-top: 10px;
 }

@@ -18,11 +18,34 @@ export const renderSummary = (array) => {
   document.querySelector('#info').appendChild(summary);
 };
 
-export const generateTodoDOM = (element) => {
-  const p = document.createElement('p');
-  p.textContent = `${element.text}`;
-  p.classList.add('todo');
-  document.querySelector('.todos').appendChild(p);
+export const removeTodo = (id, array) => {
+  const result = array.filter((todo) => {
+    return todo.id !== id;
+  });
+  return result;
+};
+
+// rendering Todos
+export const generateTodosDOM = (todo) => {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('todo');
+  wrapper.dataset.id = `${todo.id}`;
+
+  const text = document.createElement('span');
+  text.textContent = `${todo.text}`;
+
+  const button = document.createElement('button');
+  button.textContent = 'Delete';
+  button.classList.add('button-delete');
+
+  const checkbox = document.createElement('input');
+  checkbox.setAttribute('type', 'checkbox');
+
+  wrapper.appendChild(checkbox);
+  wrapper.appendChild(text);
+  wrapper.appendChild(button);
+
+  document.querySelector('.todos').appendChild(wrapper);
 };
 
 export const renderTodos = (array, filters) => {
@@ -32,7 +55,7 @@ export const renderTodos = (array, filters) => {
   // cleaning todos
   document.querySelector('.todos').innerHTML = '';
 
-  filteredTodos.forEach((element) => {
-    generateTodoDOM(element);
+  filteredTodos.forEach((todo) => {
+    generateTodosDOM(todo);
   });
 };
